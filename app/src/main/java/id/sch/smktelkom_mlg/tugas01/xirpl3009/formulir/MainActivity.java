@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     RadioGroup rgJK;
     CheckBox cbLari, cbRenang, cbBasket;
     Button bOk;
-    TextView tvHasil1, tvHasil2, tvHasil3, tvHasil4, tvPendidikan;
+    TextView tvHasil1, tvHasil2, tvHasil3, tvHasil4, tvHobi;
     int nHobi;
 
     String[][]arKota = {{"Jakarta Barat", "Jakarta Pusat", "Jakarta Selatan", "Jakarta Timur", "Jakarta Utara"},
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         tvHasil2 = (TextView) findViewById(R.id.textViewHasil2);
         tvHasil3 = (TextView) findViewById(R.id.textViewHasil3);
         tvHasil4 = (TextView) findViewById(R.id.textViewHasil4);
-        tvPendidikan  = (TextView) findViewById(R.id.textViewHobi);
+        tvHobi = (TextView) findViewById(R.id.textViewHobi);
 
         adapter    = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listKota);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     private void doClick() {
         String nama = etNama.getText().toString();
         String tahun = etTahun.getText().toString();
-        String hasil2 = "Pendidikan anda    : ";
+        String hasil2 = "Hobi anda    : ";
         String hasil3 = null;
         int startlen = hasil2.length();
 
@@ -142,6 +142,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         if(isChecked) nHobi+=1;
         else nHobi-=1;
 
-        tvPendidikan.setText("Pendidikan");
+        tvHobi.setText("Hobi");
     }
 }
